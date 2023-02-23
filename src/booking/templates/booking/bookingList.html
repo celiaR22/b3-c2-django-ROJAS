@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+    {% for event in events %}
+        <div class="card col-3 me-4 mt-5 shadow "  >
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ event.schoolName }}</h6>
+                <p class="card-text">{{ event.price }}€</p>
+                <p class="card-text">{{ event.date }}</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="btn btn-primary">Voir le détail</a>
+                <a href="#" class="btn btn-success">Réserver</a>
+              </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

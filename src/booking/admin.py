@@ -1,5 +1,5 @@
 from django.contrib import admin
-from booking.models import schoolLessons
+from booking.models import pilotEvent
 
 # Register your models here.
-admin.site.register(schoolLessons)
+admin.site.register(pilotEvent)

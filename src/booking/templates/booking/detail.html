@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ event.image.url }}" alt="{{ event.schoolName }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ event.schoolName }}</h6>
+                <p class="card-text">{{ event.price }}€</p>
+                <p class="card-text">{{ event.date }}</p>
+                <div class="card-text">
+                    <p>{{ event.description }}</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+        </div>
+
+{% endblock %}
+
