@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class pilotEvent (models.Model):
     schoolName = models.CharField(max_length=128)
@@ -9,5 +10,9 @@ class pilotEvent (models.Model):
     date =models.DateField()
     description = models.TextField(blank=True)
     
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("event_detail", kwargs={"id": self.id})
+
