@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="container py-5 h-80">
+            <div class="row d-flex justify-content-center align-items-center h-80">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-lg" style="border-radius: 1rem;">
+                    <div class="card-body p-5">
+  
+                        <h3 class="mb-5 text-center">Se connecter</h3>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="username">Votre identifiant</label>
+                                <input type="text" id="username" class="form-control form-control-lg" name="username"/>                
+                            </div>
+  
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="password">Votre mot de passe</label>
+                                <input type="password" id="password" class="form-control form-control-lg" name="password"/>
+                            </div>
+  
+                            <button class="btn btn-success btn-md " type="submit">Valider</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
