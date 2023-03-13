@@ -24,19 +24,19 @@
               </button>
               <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Accueil</a>
+                  </li>
                   {% if  user.is_authenticated %}
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Mes réservations</a>
+                      <a class="nav-link" href="{% url 'index' %}">Mes réservations</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'index' %}">Se déconnecter</a>
+                      <a class="nav-link" href="{% url 'logout' %}">Se déconnecter</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Se connecter</a>
+                      <a class="nav-link" href="{% url 'login' %}">Se connecter</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'signup' %}">S'inscrire</a>
