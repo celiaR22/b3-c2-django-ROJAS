@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% if reservations %}
+    <div class="row ">
+        {% for reservation in reservations %}
+            <div class="card col-3 me-4 mt-5 shadow">
+                <div class="card-body">
+                    <h5 class="card-title text-uppercase">{{ reservation.pilotEvent.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted text-capitalize">{{ reservation.pilotEvent.schoolName }}</h6>
+                    <p class="card-text"><u>Prix :</u> {{ reservation.pilotEvent.price }}€</p>
+                    <p class="card-text"><u>Date :</u> {{ reservation.pilotEvent.date }}</p>
+                    <p class="card-text"><u>Réservation pour :</u> {{ reservation.quantity}} personne</p>
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'delete' reservation.id %}" class="btn btn-danger">Annuler la réservation</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <div class="text-uppercase text-center mt-5">Vous n'avez aucune réservations pour le moment</div>
+    {% endif %}
+</div>
+
+{% endblock %}
