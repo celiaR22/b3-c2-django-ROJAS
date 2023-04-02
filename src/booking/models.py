@@ -23,16 +23,12 @@ class Reservation(models.Model):
     quantity = models.IntegerField(default=1)
     ordered = models.BooleanField(default=False)
     
-    def __str__(self):
-        return f"{self.pilotEvent.schoolName} ({self.quantity})"
     
 class Cart(models.Model):
     user= models.OneToOneField(AUTH_USER_MODEL, on_delete=models.CASCADE)
     reservation = models.ManyToManyField(Reservation)
     ordered = models.BooleanField(default = False)
     
-    def __str__(self):
-        return self.user
 
     
     
